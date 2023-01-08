@@ -17,6 +17,7 @@ export default async function registerHandler(req, res) {
         // const user = await User.create(req.body);
         const user = await User.create({email, password});
         
+        
         // Generate Token
         const token = generateToken(user._id);
         // console.log(token)
@@ -30,7 +31,6 @@ export default async function registerHandler(req, res) {
             return res.json({message: "User not created"})
         }
     } catch (error) {
-        throw new Error(error)
         res.status(400).json({status: "Not able to create a new user."})
     }
 }

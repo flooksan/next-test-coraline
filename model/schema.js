@@ -14,6 +14,20 @@ const userSchema = new mongoose.Schema({
     loginCount: {
         type: Number,
         default: 0,
+    },
+    loginFalseStartTime: {
+        type: Date
+    },
+    ban: { 
+        type: Boolean, 
+        default: false 
+    },
+    banTime: {
+        type: Date
+    },
+    loginFalseCount: { 
+        type: Number, 
+        default: 0 
     }
 }, { timestamps: true });
 

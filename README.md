@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Setup Nodemodule
+npm install
+
+## Setup Enviroment
+create .env file and set
+1. MONGODB_URI for connect data base
+2. JWT_SECRET for create jwt token
+3. NODE_ENV = production  for production if developer please change to developer
+
+
 ## Getting Started
 
 First, run the development server:

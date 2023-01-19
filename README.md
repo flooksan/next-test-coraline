@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 ## Update ##
-Fixed: logic login missing by new branch dev_kloof  
+Fixed: logic login missing in branch dev_kloof  
 
 ## Setup Nodemodule
 npm install

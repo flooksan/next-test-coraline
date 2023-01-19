@@ -1,0 +1,35 @@
+
+/* register page style */
+
+.register__header, .index__header {
+    font-weight: 700;
+    text-shadow: 1px 1px 2px gray;
+    text-align: center;
+    color: #3C79F5;
+}
+
+.form__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form__container input,a {
+    font-size: 16px;
+    
+}
+
+.form__container input {
+    background: #82CD47;
+    border: none;
+}
+
+.form__container input:hover {
+    background: #54B435;
+    
+}
+
+.form__container a {
+    font-size: 16px;
+}

@@ -5,8 +5,7 @@ import User from "../../model/schema";
 connect()
 
 export default async function findUserHandler (req, res) {
-    // console.log(req.query)
-    // res.status(200).send({message: "Success Get !"})
+    
     try {
         const {token} = req.query
         if (!token) {
@@ -21,7 +20,7 @@ export default async function findUserHandler (req, res) {
        
         // find user data
         const user = await User.findById(verified.id).select("-password")
-        // console.log("user data",user)
+        
 
         if(!user) {
             res.status(401) // Not authorized

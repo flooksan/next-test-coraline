@@ -8,8 +8,10 @@ import Script from "next/script";
 
 export default function Homepage(props){
     // console.log(props)
-    const {token} = props;
+    const {token, message} = props;
     
+    
+
     // Token Check 
     
 
@@ -37,8 +39,17 @@ export default function Homepage(props){
 
     },[])
 
+    // if not login
+    if (message) {
+        
+        return (<h1>{message}</h1>)
+    }
+
+    // show loading
     if(isLoading || userData.length === 0) {
-        return <p>Loading...</p>
+        return (
+        <p>Loading...</p>
+        )
     }
 
     
@@ -71,7 +82,11 @@ export async function getServerSideProps({req , res}) {
             }
         };
     } else {
-        //  redirect to login
+       return {
+        props: {
+            message: `Please login!!`
+        }
+       };
    
     }
 

@@ -12,10 +12,10 @@ const generateToken = (id) => {
 
 export default async function registerHandler(req, res) {
     try {
-        const {email, password} = req.body;
+        const {email, password, username} = req.body;
         
         // const user = await User.create(req.body);
-        const user = await User.create({email, password});
+        const user = await User.create({email, password, username});
         
         
         // Generate Token
@@ -23,14 +23,14 @@ export default async function registerHandler(req, res) {
         // console.log(token)
 
 
-        res.status(201)
-        // .json({message: "Register success please login"})
-        .redirect('/')
+        res.status(201).json({message: "Success please login!"})
+       
+        // .redirect('/')
 
         if(!user) {
-            return res.json({message: "User not created"})
+            return res.status(400).json({message: "User not created"})
         }
     } catch (error) {
-        res.status(400).json({status: "Not able to create a new user."})
+        res.status(400).json({message: "Not able to create a new user."})
     }
 }
